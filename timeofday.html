@@ -1,0 +1,96 @@
+  <html>
+<head>
+<script type="text/javascript">
+var myDate2 = new Date();
+var myCopy = myDate2.getFullYear();
+	
+function changeColors () 
+{
+	var myDate = new Date();
+	var myYear = myDate.getFullYear();
+	var myHour = myDate.getHours();
+	//alert (myHour);
+	
+	//myHour = 11;//testing only  - dont't leave this here
+	var myColor = ' ';
+	var myText = ' ';
+	var myPath = 'http://edison.seattlecentral.edu/~cpetri02/web150/sandbox/images/';
+	var myImg = ' ';
+	
+	var d = new Date();
+var weekday = new Array(7);
+weekday[0]=  "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+
+var n = weekday[d.getDay()];
+var dayofweek=n
+	
+	
+	if(myHour >=5 && myHour<=11 ) 
+	{//make morning colors
+	myColor="#f04368";
+	myText = "Good Morning!";
+	myImg = "goodmorning.gif";
+	
+		
+	} else if(myHour >=12 && myHour<=17 ) 
+		{//make afternoon colors
+		myColor="#a9b690";
+		myText = "Good Afternoon!";
+		myImg = "goodafternoon.jpg";
+		
+			
+	} else if(myHour >=18 && myHour<=22 ) 
+		{//make evening colors
+		myColor="#A00000";
+		myText = "Good Evening!";
+		myImg = "goodevening.gif";
+		
+			
+	} else if(myHour >22 || myHour<4)
+		{//make night colors
+		myColor="#FF9900";
+		myText = "Good Night!";
+		myImg = "goodnight.jpg"; }
+		
+			
+			
+		document.bgColor=myColor;
+		document.getElementById('myDiv').innerHTML= myText;	
+		document.getElementById('myPic').src = myPath + myImg;
+		document.getElementById('demo').innerHTML = "The day of the week is" + " " + n;
+		
+		
+}//end changeColors()
+</script>
+
+</head>
+
+<body onload="changeColors();">
+<div id="myDiv">
+
+If this works, you should not see this!
+
+</div>
+
+<div id="demo">
+</div>
+
+
+<p>
+<img src=" " id="myPic" />
+</p>
+
+
+&copy; Copyright 2010-<script>document.write(myCopy);</script>
+
+
+
+
+</body>
+</html>
